@@ -1,6 +1,4 @@
+import 'package:flutter/material.dart';
 
-
-
-final String SIGN_IN = 'signin';
-final String SIGN_UP ='signup';
-final String SPLASH_SCREEN ='splashscreen';
+final Color kLeftPrimaryColor = Colors.orange[200];
+final Color kRightPrimaryColor = Colors.pinkAccent;

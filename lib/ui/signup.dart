@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:login_signup/constants/constants.dart';
+
 import 'package:login_signup/ui/widgets/custom_shape.dart';
 import 'package:login_signup/ui/widgets/customappbar.dart';
 import 'package:login_signup/ui/widgets/responsive_ui.dart';
 import 'package:login_signup/ui/widgets/textformfield.dart';
+import 'package:login_signup/constants/constants.dart';
 
-
+import 'signin.dart';
 
 class SignUpScreen extends StatefulWidget {
+  static const String id = 'SignUpScreen';
+
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
@@ -66,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: _large? _height/8 : (_medium? _height/7 : _height/6.5),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange[200], Colors.pinkAccent],
+                  colors: [kLeftPrimaryColor, kRightPrimaryColor],
                 ),
               ),
             ),
@@ -80,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: _large? _height/12 : (_medium? _height/11 : _height/10),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange[200], Colors.pinkAccent],
+                  colors: [kLeftPrimaryColor, kRightPrimaryColor],
                 ),
               ),
             ),
@@ -105,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 print('Adding photo');
               },
 
-              child: Icon(Icons.add_a_photo, size: _large? 40: (_medium? 33: 31),color: Colors.orange[200],)),
+              child: Icon(Icons.add_a_photo, size: _large? 40: (_medium? 33: 31),color: kLeftPrimaryColor,)),
         ),
 //        Positioned(
 //          top: _height/8,
@@ -201,7 +204,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Checkbox(
-              activeColor: Colors.orange[200],
+              activeColor: kLeftPrimaryColor,
               value: checkBoxValue,
               onChanged: (bool newValue) {
                 setState(() {
@@ -233,7 +236,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           gradient: LinearGradient(
-            colors: <Color>[Colors.orange[200], Colors.pinkAccent],
+            colors: <Color>[kLeftPrimaryColor, kRightPrimaryColor],
           ),
         ),
         padding: const EdgeInsets.all(12.0),
@@ -301,13 +304,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pop(SIGN_IN);
+              Navigator.of(context).pop(SignInPage.id);
               print("Routing to Sign up screen");
             },
             child: Text(
               "Sign in",
               style: TextStyle(
-                  fontWeight: FontWeight.w800, color: Colors.orange[200], fontSize: 19),
+                  fontWeight: FontWeight.w800, color: kLeftPrimaryColor, fontSize: 19),
             ),
           )
         ],

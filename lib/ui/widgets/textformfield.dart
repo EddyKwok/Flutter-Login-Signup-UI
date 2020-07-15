@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/ui/widgets/responsive_ui.dart';
+import 'package:login_signup/constants/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hint;
@@ -33,9 +34,9 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: textEditingController,
         keyboardType: keyboardType,
-        cursorColor: Colors.orange[200],
+        cursorColor: kLeftPrimaryColor,
         decoration: InputDecoration(
-          prefixIcon: Icon(icon, color: Colors.orange[200], size: 20),
+          prefixIcon: Icon(icon, color: kLeftPrimaryColor, size: 20),
           hintText: hint,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30.0),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:login_signup/constants/constants.dart';
 import 'package:login_signup/ui/widgets/custom_shape.dart';
 import 'package:login_signup/ui/widgets/responsive_ui.dart';
 import 'package:login_signup/ui/widgets/textformfield.dart';
+import 'package:login_signup/constants/constants.dart';
 
+import 'signup.dart';
 
 class SignInPage extends StatelessWidget {
+  static const String id = 'SignInPage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +77,7 @@ class _SignInScreenState extends State<SignInScreen> {
               height:_large? _height/4 : (_medium? _height/3.75 : _height/3.5),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange[200], Colors.pinkAccent],
+                  colors: [kLeftPrimaryColor, kRightPrimaryColor],
                 ),
               ),
             ),
@@ -88,7 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
               height: _large? _height/4.5 : (_medium? _height/4.25 : _height/4),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange[200], Colors.pinkAccent],
+                  colors: [kLeftPrimaryColor, kRightPrimaryColor],
                 ),
               ),
             ),
@@ -200,7 +203,7 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Text(
               "Recover",
               style: TextStyle(
-                  fontWeight: FontWeight.w600, color: Colors.orange[200]),
+                  fontWeight: FontWeight.w600, color: kLeftPrimaryColor),
             ),
           )
         ],
@@ -227,7 +230,7 @@ class _SignInScreenState extends State<SignInScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           gradient: LinearGradient(
-            colors: <Color>[Colors.orange[200], Colors.pinkAccent],
+            colors: <Color>[kLeftPrimaryColor, kRightPrimaryColor],
           ),
         ),
         padding: const EdgeInsets.all(12.0),
@@ -251,13 +254,13 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pushNamed(SIGN_UP);
+              Navigator.of(context).pushNamed(SignUpScreen.id);
               print("Routing to Sign up screen");
             },
             child: Text(
               "Sign up",
               style: TextStyle(
-                  fontWeight: FontWeight.w800, color: Colors.orange[200], fontSize: _large? 19: (_medium? 17: 15)),
+                  fontWeight: FontWeight.w800, color: kLeftPrimaryColor, fontSize: _large? 19: (_medium? 17: 15)),
             ),
           )
         ],
